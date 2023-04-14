@@ -1,1 +1,78 @@
-# meu-site
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pedido de namoro</title>
+    <style>
+        /* Estilização básica do site */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 100px;
+        }
+
+        .opcoes {
+            margin-top: 50px;
+        }
+
+        #nao {
+            cursor: pointer;
+            position: relative;
+        }
+
+        /* Aplicar a animação quando a opção "não" é selecionada */
+        #nao:hover {
+            animation: fugaDoMouse 1s infinite;
+        }
+
+        /* Animação de fuga do mouse */
+        @keyframes fugaDoMouse {
+            0% {
+                top: 0;
+                left: 0;
+            }
+            25% {
+                top: -10px;
+                left: 10px;
+            }
+            50% {
+                top: 0;
+                left: 0;
+            }
+            75% {
+                top: 10px;
+                left: -10px;
+            }
+            100% {
+                top: 0;
+                left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Quer ser minha namorada?</h1>
+    <div class="opcoes">
+        <button id="sim">Sim</button>
+        <button id="nao">Não</button>
+    </div>
+    <script>
+        // Adicionar evento de clique aos botões
+        document.getElementById("sim").addEventListener("click", function() {
+            alert("Que bom! Eu te amo!");
+        });
+
+        document.getElementById("nao").addEventListener("mouseover", function() {
+            // Gerar coordenadas aleatórias para o botão se mover
+            var top = Math.floor(Math.random() * 201) - 50; // Valores entre -50 e 50
+            var left = Math.floor(Math.random() * 201) - 50; // Valores entre -50 e 50
+
+            // Aplicar a animação de fuga do mouse com as coordenadas aleatórias
+            this.style.top = top + "px";
+            this.style.left = left + "px";
+        });
+    </script>
+</body>
+</html>
